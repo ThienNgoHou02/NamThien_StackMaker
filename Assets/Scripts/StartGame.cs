@@ -8,18 +8,10 @@ public class StartGame : MonoBehaviour
 {
     [SerializeField] Button playButton;
 
-    private string level;
+    private string level = "Level1";
     private void Start()
     {
         playButton.onClick.AddListener(PlayGame);
-
-        if (!PlayerPrefs.HasKey("Level"))
-        {
-            PlayerPrefs.SetString("Level", "Level1");
-            level = "Level1";
-        }
-        else
-            level = PlayerPrefs.GetString("Level");
     }
     private void PlayGame() 
     { 
